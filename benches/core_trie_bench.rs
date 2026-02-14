@@ -7,8 +7,8 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::sync::Once;
 use std::time::Instant;
-use unitrie_rs_core::next::core_trie::NextUnitrie;
-use unitrie_rs_core::store_adapter::RawStoreAdapter;
+use unitrie_rs::next::core_trie::NextUnitrie;
+use unitrie_rs::store_adapter::RawStoreAdapter;
 
 static SUMMARY_ONCE: Once = Once::new();
 const CORE_CORPUS_ENV: &str = "UNITRIE_JMH_CORE_CORPUS_PATH";

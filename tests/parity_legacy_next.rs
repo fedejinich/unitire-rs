@@ -1,6 +1,6 @@
 use std::collections::HashMap;
-use unitrie_rs_core::hash::keccak256;
-use unitrie_rs_core::{RawStoreAdapter, UnitrieCore, UnitrieImplementation};
+use unitrie_rs::hash::keccak256;
+use unitrie_rs::{RawStoreAdapter, UnitrieCore, UnitrieImplementation};
 
 #[derive(Default)]
 struct InMemoryStore {

@@ -1,31 +1,32 @@
-# unitrie-rs-core
+# unitrie-rs
 
-Reusable Rust crate for RSK Unitrie core operations, without JNI bindings.
+`unitrie-rs` is the reusable Rust core for Rootstock Unitrie.
 
-## What it provides
+This crate is intentionally JNI-free so it can be embedded by different hosts (RSKj adapter, future Rust-native clients, and potential Reth integration paths).
 
-- `UnitrieCore` facade with selectable implementation:
-  - `legacy-v1`: compatibility-oriented legacy engine.
-  - `next`: incremental engine with cached mutation/persistence paths.
-- Core trie operations:
-  - `get`, `put`, `delete`, `delete_recursive`
-  - root hash calculation and snapshotting
-  - persisted root loading via `RawStoreAdapter`
-- Codec and hashing utilities used by both trie engines.
+## Scope
+
+- Consensus-sensitive trie behavior (`put/get/delete/delete_recursive`)
+- Root hash semantics and snapshot support
+- Persistence load/save via `RawStoreAdapter`
+- Compatibility-focused implementations:
+  - `legacy-v1`
+  - `next`
+- Codec modules used by the trie core:
+  - `RSKIP107`
+  - `Orchid`
 
 ## Install
 
-Add to your `Cargo.toml`:
-
 ```toml
 [dependencies]
-unitrie-rs-core = { path = "./unitrie-rs" }
+unitrie-rs = { git = "https://github.com/fedejinich/unitire-rs.git" }
 ```
 
-## Quick example
+## Quick start
 
 ```rust
-use unitrie_rs_core::{UnitrieCore, UnitrieImplementation};
+use unitrie_rs::{UnitrieCore, UnitrieImplementation};
 
 let mut trie = UnitrieCore::new(UnitrieImplementation::LegacyV1);
 trie.put(b"hello".to_vec(), b"world".to_vec());
@@ -34,9 +35,16 @@ assert_eq!(trie.get(b"hello"), Some(b"world".to_vec()));
 
 ## Development
 
-- Run tests: `cargo test`
-- Run benches: `cargo bench`
+```bash
+cargo test
+cargo bench --bench core_trie_bench
+```
+
+## Validation approach
+
+- Rust parity tests compare `legacy-v1` and `next` deterministically.
+- This crate is intended to be validated against Java behavior in host integration repositories.
 
 ## License
 
-LGPL-3.0-or-later
+LGPL-3.0-or-later.

@@ -1,9 +1,11 @@
 [package]
-name = "unitrie-rs-core"
+name = "unitrie-rs"
 version = "0.1.0"
 edition = "2021"
 license = "LGPL-3.0-or-later"
-description = "Reusable core API for RSK Unitrie without JNI bindings"
+description = "Reusable Rust core for Rootstock Unitrie (JNI-free)"
+repository = "https://github.com/fedejinich/unitire-rs"
+readme = "README.md"
 
 [dependencies]
 tiny-keccak = { version = "2", features = ["keccak"] }
