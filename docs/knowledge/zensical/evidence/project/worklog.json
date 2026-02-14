@@ -1,0 +1,45 @@
+{
+  "project": "unitrie-rs",
+  "updatedAt": "2026-02-14",
+  "entries": [
+    {
+      "id": "UW-2026-02-14-01",
+      "date": "2026-02-14",
+      "title": "Standalone core extraction and publication",
+      "summary": "Created standalone reusable core repo, published to GitHub, and tagged v0.1.0.",
+      "evidence": {
+        "commits": [
+          "c8f3e82",
+          "b768989"
+        ],
+        "tags": [
+          "v0.1.0"
+        ],
+        "commands": [
+          "cargo test"
+        ],
+        "results": {
+          "unitTestsPassed": 38,
+          "parityTestsPassed": 2
+        },
+        "remote": "git@github.com:fedejinich/unitire-rs.git"
+      }
+    },
+    {
+      "id": "UW-2026-02-14-02",
+      "date": "2026-02-14",
+      "title": "Documentation discipline hardening",
+      "summary": "Made TODO-CODEX, AGENTS, and Zensical evidence updates mandatory for future work.",
+      "evidence": {
+        "files": [
+          "AGENTS.md",
+          "TODO-CODEX.md",
+          "docs/knowledge/zensical/README.md",
+          "docs/knowledge/zensical/maps/documentation-protocol.md",
+          "docs/knowledge/zensical/evidence/project/worklog.md",
+          "docs/knowledge/zensical/evidence/project/worklog.json"
+        ]
+      }
+    }
+  ]
+}
