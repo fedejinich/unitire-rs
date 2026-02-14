@@ -4,3 +4,6 @@ version = "0.1.0"
 edition = "2021"
 license = "LGPL-3.0-or-later"
 description = "Reusable core API for RSK Unitrie without JNI bindings"
+
+[dependencies]
+tiny-keccak = { version = "2", features = ["keccak"] }
