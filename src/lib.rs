@@ -179,7 +179,7 @@ impl UnitrieCore {
     }
 
     pub fn save_to_store<T: RawStoreAdapter>(&mut self, store: &mut T) {
-        let _ = self.save_to_store_with_stats(store);
+        self.save_to_store_with_stats(store);
     }
 
     pub fn save_to_store_with_stats<T: RawStoreAdapter>(&mut self, store: &mut T) -> SaveStats {
